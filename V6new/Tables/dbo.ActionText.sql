@@ -1,0 +1,31 @@
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ActionText] (
+		[AN_Key]               [int] NOT NULL,
+		[AT_Text]              [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[AT_FormattedText]     [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		CONSTRAINT [PK__ActionTe__FF73481A32E0915F]
+		PRIMARY KEY
+		CLUSTERED
+		([AN_Key])
+	ON [PRIMARY]
+)
+GO
+ALTER TABLE [dbo].[ActionText]
+	WITH CHECK
+	ADD CONSTRAINT [FK__ActionTex__AN_Ke__218BE82B]
+	FOREIGN KEY ([AN_Key]) REFERENCES [dbo].[Action] ([AN_Key])
+ALTER TABLE [dbo].[ActionText]
+	CHECK CONSTRAINT [FK__ActionTex__AN_Ke__218BE82B]
+
+GO
+CREATE FULLTEXT INDEX ON [dbo].[ActionText]
+	([AT_Text] LANGUAGE 1033)
+	KEY INDEX [PK__ActionTe__FF73481A32E0915F]
+	ON (FILEGROUP [PRIMARY], [CAT_Action])
+	WITH CHANGE_TRACKING AUTO, STOPLIST SYSTEM
+GO
+ALTER TABLE [dbo].[ActionText] SET (LOCK_ESCALATION = TABLE)
+GO

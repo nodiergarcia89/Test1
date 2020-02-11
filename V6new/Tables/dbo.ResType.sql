@@ -1,0 +1,36 @@
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ResType] (
+		[RE_Code]     [nvarchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		[TY_Code]     [nvarchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		CONSTRAINT [PK__ResType__4537CF65770B9E7A]
+		PRIMARY KEY
+		CLUSTERED
+		([RE_Code], [TY_Code])
+	ON [PRIMARY]
+)
+GO
+ALTER TABLE [dbo].[ResType]
+	WITH CHECK
+	ADD CONSTRAINT [FK__ResType__RE_Code__302F0D3D]
+	FOREIGN KEY ([RE_Code]) REFERENCES [dbo].[Res] ([RE_Code])
+ALTER TABLE [dbo].[ResType]
+	CHECK CONSTRAINT [FK__ResType__RE_Code__302F0D3D]
+
+GO
+ALTER TABLE [dbo].[ResType]
+	WITH CHECK
+	ADD CONSTRAINT [FK__ResType__TY_Code__31233176]
+	FOREIGN KEY ([TY_Code]) REFERENCES [dbo].[Type] ([TY_Code])
+ALTER TABLE [dbo].[ResType]
+	CHECK CONSTRAINT [FK__ResType__TY_Code__31233176]
+
+GO
+CREATE NONCLUSTERED INDEX [RS_ExpTypeResIndex]
+	ON [dbo].[ResType] ([TY_Code], [RE_Code])
+	ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[ResType] SET (LOCK_ESCALATION = TABLE)
+GO
