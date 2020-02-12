@@ -9,6 +9,7 @@ CREATE TABLE [dbo].[ActionForward] (
 		[RE_Code]           [nvarchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[ANF_Date]          [float] NULL,
 		[ANF_Read]          [smallint] NULL,
+		[Testfield]         [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK__ActionFo__7993F29F276EDEB3]
 		PRIMARY KEY
 		CLUSTERED
