@@ -8,6 +8,7 @@ CREATE TABLE [dbo].[ABSFilterDetails] (
 		[AD_Type]       [nvarchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[AD_Text]       [nvarchar](70) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[AD_Number]     [float] NULL,
+		[Test]          [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK__ABSFilte__6437887E07F6335A]
 		PRIMARY KEY
 		CLUSTERED
