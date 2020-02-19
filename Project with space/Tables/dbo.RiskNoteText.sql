@@ -1,0 +1,31 @@
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[RiskNoteText] (
+		[RH_Key]               [int] NOT NULL,
+		[RH_Text]              [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[RH_FormattedText]     [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		CONSTRAINT [PK__RiskNote__EC90BDB333208881]
+		PRIMARY KEY
+		CLUSTERED
+		([RH_Key])
+	ON [PRIMARY]
+)
+GO
+ALTER TABLE [dbo].[RiskNoteText]
+	WITH CHECK
+	ADD CONSTRAINT [FK__RiskNoteT__RH_Ke__480696CE]
+	FOREIGN KEY ([RH_Key]) REFERENCES [dbo].[RiskNoteHeader] ([RH_Key])
+ALTER TABLE [dbo].[RiskNoteText]
+	CHECK CONSTRAINT [FK__RiskNoteT__RH_Ke__480696CE]
+
+GO
+CREATE FULLTEXT INDEX ON [dbo].[RiskNoteText]
+	([RH_Text] LANGUAGE 1033)
+	KEY INDEX [PK__RiskNote__EC90BDB333208881]
+	ON (FILEGROUP [PRIMARY], [CAT_Risk])
+	WITH CHANGE_TRACKING AUTO, STOPLIST SYSTEM
+GO
+ALTER TABLE [dbo].[RiskNoteText] SET (LOCK_ESCALATION = TABLE)
+GO
