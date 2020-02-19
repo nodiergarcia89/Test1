@@ -19,6 +19,7 @@ CREATE TABLE [dbo].[ActionView] (
 		[AV_VisibleOnSearch]                     [smallint] NULL,
 		[AV_ProjectDashboardTab]                 [int] NULL,
 		[AV_VisibleOnAddMenu]                    [smallint] NULL,
+		[test]                                   [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK__ActionVi__6A86C5705165187F]
 		PRIMARY KEY
 		CLUSTERED
