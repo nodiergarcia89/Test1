@@ -1,0 +1,36 @@
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[PrjType] (
+		[PR_Code]     [nvarchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		[TY_Code]     [nvarchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		CONSTRAINT [PK__PrjType__C6AAA73244EA3301]
+		PRIMARY KEY
+		CLUSTERED
+		([PR_Code], [TY_Code])
+	ON [PRIMARY]
+)
+GO
+ALTER TABLE [dbo].[PrjType]
+	WITH CHECK
+	ADD CONSTRAINT [FK__PrjType__PR_Code__1A74D648]
+	FOREIGN KEY ([PR_Code]) REFERENCES [dbo].[Projects] ([PR_Code])
+ALTER TABLE [dbo].[PrjType]
+	CHECK CONSTRAINT [FK__PrjType__PR_Code__1A74D648]
+
+GO
+ALTER TABLE [dbo].[PrjType]
+	WITH CHECK
+	ADD CONSTRAINT [FK__PrjType__TY_Code__1B68FA81]
+	FOREIGN KEY ([TY_Code]) REFERENCES [dbo].[Type] ([TY_Code])
+ALTER TABLE [dbo].[PrjType]
+	CHECK CONSTRAINT [FK__PrjType__TY_Code__1B68FA81]
+
+GO
+CREATE NONCLUSTERED INDEX [PT_TypePrjIndex]
+	ON [dbo].[PrjType] ([TY_Code], [PR_Code])
+	ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[PrjType] SET (LOCK_ESCALATION = TABLE)
+GO
