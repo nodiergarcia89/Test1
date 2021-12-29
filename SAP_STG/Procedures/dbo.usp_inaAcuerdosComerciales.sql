@@ -7,6 +7,7 @@ GO
 -- Description: Acuerdos comerciales
 -- Incluir los acuerdos comerciales que se incorporan con Limagito
 -- Se integran como elementos multimedia de cliente
+-- test
 -- ================================================================
 CREATE procedure [dbo].[usp_inaAcuerdosComerciales] AS
 BEGIN

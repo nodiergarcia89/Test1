@@ -6,6 +6,7 @@ GO
 -- Author:		Ramon Villanueva
 -- Create date: 28/01/15
 -- Description:	Articulos e Imagenes
+--test
 -- =============================================
 CREATE PROCEDURE [dbo].[uspArticulosImagenes] AS
 BEGIN
