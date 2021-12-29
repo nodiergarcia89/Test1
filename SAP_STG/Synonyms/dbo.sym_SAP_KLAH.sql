@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_KLAH] FOR [SAPPROD].[PRD].[prd].[KLAH]
+GO

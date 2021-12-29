@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_M_MERKB] FOR [SAPPROD].[PRD].[prd].[M_MERKB]
+GO

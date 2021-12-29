@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_KSSK] FOR [SAPPROD].[PRD].[prd].[KSSK]
+GO

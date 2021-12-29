@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_USR21] FOR [SAPPROD].[PRD].[prd].[USR21]
+GO

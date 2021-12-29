@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_ZSD005] FOR [SAPPROD].[PRD].[prd].[ZSD005]
+GO

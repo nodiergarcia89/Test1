@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_MCHA] FOR [SAPPROD].[PRD].[prd].[MCHA]
+GO

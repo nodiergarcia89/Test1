@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_KNVP] FOR [SAPPROD].[PRD].[prd].[KNVP]
+GO

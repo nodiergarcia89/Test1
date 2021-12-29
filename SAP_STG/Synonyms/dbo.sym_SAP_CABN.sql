@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_CABN] FOR [SAPPROD].[PRD].[prd].[CABN]
+GO

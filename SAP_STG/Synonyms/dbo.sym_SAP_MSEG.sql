@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_MSEG] FOR [SAPPROD].[PRD].[prd].[MSEG]
+GO

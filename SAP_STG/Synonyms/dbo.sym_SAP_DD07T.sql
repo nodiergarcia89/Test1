@@ -1,0 +1,2 @@
+CREATE SYNONYM [dbo].[sym_SAP_DD07T] FOR [SAPPROD].[PRD].[prd].[DD07T]
+GO
